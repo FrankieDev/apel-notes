@@ -1,0 +1,6 @@
+const createTableFolders = `
+CREATE TABLE IF NOT EXISTS your_table_name (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    date_add TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);`

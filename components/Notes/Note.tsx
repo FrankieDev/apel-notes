@@ -2,9 +2,10 @@ import React from 'react'
 import { IoFolderOutline } from 'react-icons/io5'
 
 function Note() {
+  console.log('Note Component created')
   return (
     <div
-      className='rounded py-2 px-4 mb-2 border-b border-b-zinc-200 hover:bg-zinc-200 cursor-pointer'
+      className='rounded py-2 px-4 mb-2 border-b border-b-zinc-200 hover:bg-zinc-200 cursor-pointer overflow-hidden'
       role='button'
     >
       <p className='text-sm font-semibold text-zinc-700'>New Note</p>

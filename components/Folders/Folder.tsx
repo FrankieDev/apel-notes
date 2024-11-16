@@ -16,7 +16,7 @@ const Folder: React.FC<Proptype> = ({ folder }) => {
     <div
       className={twMerge(
         'flex justify-between mb-1 py-1 px-5 rounded-md hover:bg-zinc-200 cursor-pointer',
-        folderSelected ? 'bg-zinc-300' : ''
+        folderSelected == folder.id ? 'bg-zinc-300' : ''
       )}
       onClick={() => setFolderSelected(folder.id as number)}
     >

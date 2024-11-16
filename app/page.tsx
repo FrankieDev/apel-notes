@@ -8,6 +8,7 @@ import {
   ResizablePanel,
   ResizablePanelGroup
 } from '@/components/ui/resizable'
+
 import Editor from '@/components/Editor'
 
 export default function Home() {
@@ -18,7 +19,10 @@ export default function Home() {
           direction='horizontal'
           className='w-full border rounded-none'
         >
-          <ResizablePanel className='w-full md:w-[300px] md:max-w-[300px] md:min-w-[250px]'>
+          <ResizablePanel
+            defaultSize={15}
+            className='w-full md:w-[300px] md:max-w-[300px] md:min-w-[250px]'
+          >
             <div
               className={`${bgColors.folders} p-2 border-r-gray-300 h-screen`}
             >
@@ -26,12 +30,15 @@ export default function Home() {
             </div>
           </ResizablePanel>
           <ResizableHandle />
-          <ResizablePanel className='w-full md:w-[300px] md:max-w-[300px] md:min-w-[250px] border-r border-r-zinc-200'>
+          <ResizablePanel
+            defaultSize={15}
+            className='w-full md:w-[300px] md:max-w-[300px] md:min-w-[250px] border-r border-r-zinc-200'
+          >
             <div className={`${bgColors.listNotes}`}>
               <List />
             </div>
           </ResizablePanel>
-          <ResizablePanel defaultSize={75}>
+          <ResizablePanel defaultSize={70}>
             <Editor></Editor>
           </ResizablePanel>
         </ResizablePanelGroup>

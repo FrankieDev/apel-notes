@@ -24,7 +24,7 @@ export default function BlokeNote() {
       editor={editor}
       onChange={() => {
         // Saves the document JSON to state.
-        setBlocks(editor.document)
+        //setBlocks(editor.document)
         //console.log(JSON.stringify(editor.document))
       }}
       theme={'light'}

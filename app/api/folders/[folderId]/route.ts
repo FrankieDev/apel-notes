@@ -3,21 +3,22 @@ import { db } from '@/db/turso'
 import { notesTable } from '@/db/schema'
 import { eq, sql } from 'drizzle-orm'
 
-export async function GET(request: Request) {
+export async function GET({
+  params
+}: {
+  params: Promise<{ folderId: string }>
+}) {
   //TODO: add where clause to filter folders by user and active status
-  const { userId, folderId } = await request.json()
+  const folderId = (await params).folderId
 
   try {
     const result = await db
       .select()
       .from(notesTable)
-      .where(
-        sql`${eq(notesTable.userId, userId)} AND ${eq(
-          notesTable.folderId,
-          folderId
-        )}`
-      )
+      .where(sql`${(notesTable.folderId, folderId)}`)
       .all()
+
+    console.log(result)
 
     return NextResponse.json({
       data: result
